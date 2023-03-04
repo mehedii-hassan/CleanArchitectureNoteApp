@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.cleanarchitecturenoteapp.ui.theme.*
 
-@Entity(tableName = "tbl_note")
+@Entity
 data class Note(
     val title: String,
     val content: String,
@@ -15,4 +15,6 @@ data class Note(
     companion object{
         val noteColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink)
     }
+
+    class InvalidNoteException(message:String):Exception(message)
 }
